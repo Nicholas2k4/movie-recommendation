@@ -1,0 +1,8 @@
+Flask>=3.0
+pandas
+langchain_huggingface
+qdrant_client
+langchain_qdrant
+tqdm
+pandas
+sentence-transformers

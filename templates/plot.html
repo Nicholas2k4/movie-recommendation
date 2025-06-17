@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card shadow-sm">
+    <div class="card-header fw-bold">Recommend Based on Plot</div>
+    <div class="card-body">
+        <!-- filter bar -->
+        <div class="row g-2 mb-2">
+            <div class="col-md-6">
+                <select id="filter-genre" class="form-select">
+                    <option value="">🎬 All genres</option>
+                    {% for g in [
+                    'Animation','Comedy','Family','Adventure','Fantasy','Romance','Drama',
+                    'Action','Crime','Thriller','Horror','Science Fiction','Mystery','War',
+                    'Foreign','Music','Documentary','Western','TV Movie'] %}
+                    <option value="{{g}}">{{g}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-md-6">
+                <input type="number" min="0" max="10" step="0.1" id="filter-rating" class="form-control"
+                    placeholder="Minimal rating (0-10)">
+            </div>
+        </div>
+
+        <textarea id="plot-input" class="form-control mb-3" rows="5"
+            placeholder="Type or paste a short plot description…"></textarea>
+        <button id="btn-plot" class="btn btn-primary">Recommend</button>
+        <hr>
+        <ul id="plot-results" class="list-group small"></ul>
+    </div>
+</div>
+{% endblock %}
+
+{% block script %}
+<script src="{{ url_for('static', filename='js/plot.js') }}"></script>
+{% endblock %}
