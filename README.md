@@ -1,5 +1,3 @@
-Of course. Here are the "Tech Stack" and "Getting Started" sections, written in English and formatted for a GitHub README.
-
 -----
 
 ## 🛠️ Tech Stack
@@ -41,17 +39,7 @@ source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
 pip install -r requirements.txt
 ```
 
-### 4\. Initialize the Database
-
-Before running the app, you need to populate the Qdrant vector database. This script will process the dataset, generate embeddings, and upload them.
-
-**Note**: This process may take a significant amount of time depending on your internet connection and machine specs.
-
-```bash
-python init_db.py
-```
-
-### 5\. Run the Web Application
+### 4\. Run the Web Application
 
 Once the database is ready, start the Flask server:
 
